@@ -1,10 +1,27 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <form action="/update/{{contact.id}}" method="POST">
-        <input type="text" name="fullname" id="" placeholder="Ingresa tu nombre" value={{contact.fullname}}>
-        <input type="email" name="email" id="" placeholder="Ingresa tu email" value={{contact.email}}>
-        <input type="text" name="phone" id="" placeholder="Ingresa tu telefono" value={{contact.phone}}>
-        <input type="submit" value="Actualizar">
-    </form>
+    <div class="row">
+        <div class="col-6 mx-auto shadow mt-5">
+            <form class="p-3" action="/update/{{contact.id}}" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                    <input name="fullname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={{contact.fullname}}>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={{contact.email}}>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Phone</label>
+                    <input name="phone" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={{contact.phone}}>
+                </div>
+                <!-- <input type="text" name="fullname" id="" placeholder="Ingresa tu nombre" value={{contact.fullname}}>
+                <input type="email" name="email" id="" placeholder="Ingresa tu email" value={{contact.email}}>
+                <input type="text" name="phone" id="" placeholder="Ingresa tu telefono" value={{contact.phone}}> -->
+                <input type="submit" class="btn btn-success" value="Actualizar">
+            </form>
+        </div>
+    </div>
+    
 {% endblock %}
